@@ -839,7 +839,13 @@ EV_API_DECL void ev_async_send     (EV_P_ ev_async *w) EV_THROW;
   typedef struct ev_loop ev_loop;
 #endif
 
+
+////////////////////////////////////////////////
+//Added by YongjinLiu
+int EV_PREPARE_NET();
+int EV_UN_PREPARE_NET();
 #endif
+////////////////////////////////////////////////
 
 EV_CPP(})
 

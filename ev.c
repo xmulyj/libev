@@ -4895,3 +4895,26 @@ ev_walk (EV_P_ int types, void (*cb)(EV_P_ int type, void *w)) EV_THROW
   #include "ev_wrap.h"
 #endif
 
+
+////////////////////////////////////////////////
+//Added by YongjinLiu
+int EV_PREPARE_NET()
+{
+#if defined(WIN32)
+	WORD version = MAKEWORD(2, 2); 
+	WSADATA wsaData;
+	return WSAStartup(version, &wsaData ); 
+#else
+	return 0;
+#endif
+}
+
+int EV_UN_PREPARE_NET()
+{
+#if defined(WIN32)
+	return WSACleanup(); 
+#else
+	return 0;
+#endif
+}
+////////////////////////////////////////////////
